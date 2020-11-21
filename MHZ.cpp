@@ -180,7 +180,7 @@ int MHZ::readCO2UART() {
     return STATUS_CHECKSUM_MISMATCH;
   }
 
-  int ppm_uart = 256 * (int)response[2] + response[3];
+  int ppm_uart = 256 * (int)response[2] + (int)response[3];
 
   temperature = response[4] - 44;  // - 40;
 
